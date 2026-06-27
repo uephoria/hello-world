@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>跳转到思源笔记</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            background-color: #f0f4f8;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 36px;
+        }
+        p {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+        .loading {
+            margin-top: 30px;
+            color: #3498db;
+            font-size: 20px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 20px;
+            color: white;
+            background-color: #3498db;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>📝 跳转到思源笔记</h1>
+    <p>点击下方按钮，打开思源笔记中的指定笔记</p>
+
+    <button class="btn" onclick="jumpToSiYuan()">🚀 打开思源笔记</button>
+    <p class="loading" id="status"></p>
+
+    <script>
+        function jumpToSiYuan() {
+            // 把这里改成你需要跳转的思源笔记块 ID
+            const blockId = "20260626141201-hir8ey9";
+            const url = "siyuan://blocks/" + blockId;
+
+            // 显示状态
+            document.getElementById('status').textContent = '⏳ 正在唤起思源笔记...';
+
+            // 延迟一点点执行跳转，让状态显示出来
+            setTimeout(function() {
+                window.location.href = url;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
